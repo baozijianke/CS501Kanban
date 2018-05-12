@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-public class Tab {
+public class Tab implements Serializable {
 	public static Tab kanban;
 	public static final String FILE_NAME = "KanbanTab";
 
