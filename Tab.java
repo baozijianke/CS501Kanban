@@ -49,7 +49,7 @@ public class Tab implements Serializable {
 		return true;
 	}
 
-	public SwimmingLane getLanes() {
+	public ArrayList<SwimmingLane> getLanes() {
 		return innerLanes;
 	}
 
