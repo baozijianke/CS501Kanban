@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane fx:id="card" onMouseClicked="#handleOnMouseClicked" prefHeight="80.0" prefWidth="50.0" style="-fx-background-color: #ff8484;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CardController">
+<Pane fx:id="card" onMouseClicked="#handleOnMouseClicked" onMouseEntered="#handleOnMouseEnter" onMouseExited="#handleOnMouseExit" prefHeight="80.0" prefWidth="50.0" style="-fx-background-color: #ff8484; -fx-background-radius: 25; -fx-border-radius: 25;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CardController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>

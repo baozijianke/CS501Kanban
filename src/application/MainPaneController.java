@@ -129,7 +129,9 @@ public class MainPaneController {
 		cardPane.getChildren().addAll(taskName,personInCharge);
 		
 		cardPane.setStyle("-fx-margin:15,15,0,15;"
-				+ "-fx-background-color:" + color);
+				+ "-fx-background-color:" + color + ";"
+				+ "-fx-background-radius: 8;"
+				+ "-fx-border-radius: 8;");
 		
 		if(curLaneId == 0) {
 			todoPane.getChildren().add(cardPane);

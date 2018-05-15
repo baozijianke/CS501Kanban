@@ -11,9 +11,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 public class CardController {
 	private int laneId;
@@ -111,6 +113,16 @@ public class CardController {
         	
         }
         
+	}
+	
+	@FXML
+	protected void handleOnMouseEnter(MouseEvent e) {
+		card.setEffect(new DropShadow(20, Color.BLACK));
+	}
+	
+	@FXML
+	protected void handleOnMouseExit(MouseEvent e) {
+		card.setEffect(new DropShadow(0, Color.BLACK));
 	}
 	
 	public void setCardId(int id) {
