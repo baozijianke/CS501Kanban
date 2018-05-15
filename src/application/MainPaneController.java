@@ -286,7 +286,7 @@ public class MainPaneController {
 		btnRemove.setDisable(false);
 	}
 	
-	public static Map<TimeUnit,Long> computeDiff(Date date1, Date date2) {
+	public Map<TimeUnit,Long> computeDiff(Date date1, Date date2) {
 	    long diffInMillies = date2.getTime() - date1.getTime();
 	    List<TimeUnit> units = new ArrayList<TimeUnit>(EnumSet.allOf(TimeUnit.class));
 	    Collections.reverse(units);
@@ -301,8 +301,34 @@ public class MainPaneController {
 	    return result;
 	}
 	
-	public static void setCurLaneId(int id) {
+	public void setCurLaneId(int id) {
 		curLaneId = id;
 	}
 	
+	public void moveCard(int cardId, int toLaneId) {
+		
+		Pane cardPane = Tab.kanban.getPaneById(cardId);
+		if(toLaneId == 0) {
+			todoPane.getChildren().add(cardPane);
+			todoPane.setMargin(cardPane, new Insets(15, 15, 0, 15));
+		}
+		if(toLaneId == 1) {
+			doingPane.getChildren().add(cardPane);
+			doingPane.setMargin(cardPane, new Insets(15, 15, 0, 15));
+		}
+		if(toLaneId == 2) {
+			donePane.getChildren().add(cardPane);
+			donePane.setMargin(cardPane, new Insets(15, 15, 0, 15));
+		}
+		
+		if(curLaneId == 0) {
+			todoPane.getChildren().remove(cardPane);
+		}
+		if(curLaneId == 1) {
+			doingPane.getChildren().remove(cardPane);
+		}
+		if(curLaneId == 2) {
+			donePane.getChildren().remove(cardPane);
+		}
+	}
 }
