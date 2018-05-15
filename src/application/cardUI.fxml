@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane fx:id="card" onMouseClicked="#handleOnMouseClicked" prefHeight="80.0" prefWidth="50.0" style="-fx-background-color: #ff8484;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CardController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</Pane>

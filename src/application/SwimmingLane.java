@@ -1,15 +1,18 @@
-import java.util.Arraylist
-import java.io.Serializable;
+package application;
 
-public class SwimmingLane implements Serializable, Comparable<SwimmingLane> {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class SwimmingLane implements Serializable {
 	private int laneID;
 	private String laneTitle;
-	private int sequence;
+	private int laneSquence;
 	private ArrayList<Card> innerCards;	
 
 	public SwimmingLane(String title) {
+		innerCards = new  ArrayList<Card>();
 		setID();
-		setTitile(title);
+		setTitle(title);
 	}
 	
 	public boolean setID() {
@@ -30,30 +33,25 @@ public class SwimmingLane implements Serializable, Comparable<SwimmingLane> {
 		return this.laneTitle;
 	}
 	
-	public boolean setSequence(String sequence) {
-		this.laneSquence = squence;
+	public boolean setSequence(int sequence) {
+		this.laneSquence = sequence;
 		return true;
 	}
 
 	public int getSquence() {
 		return this.laneSquence;
 	}
-	
-	public boolean setCardNumber (){
-		this.CardNumber = number;
-		return true;
-	}
 
 	public int getCardNumber() {
-		return this.CardNumber;
+		return this.innerCards.size();
 	}
 	
 	public boolean addCards(Card card) {
 		if (innerCards.contains(card)) {
 			return false;
 		}
-		innerCards.add(card)
-		return true
+		innerCards.add(card);
+		return true;
 	}
 	
 	public boolean removeCard(Card card) {

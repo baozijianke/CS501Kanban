@@ -1,3 +1,5 @@
+package application;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.io.Serializable;
@@ -7,10 +9,13 @@ public class Card implements Serializable, Comparable<Card> {
 	private String cardTitle;				//required
 	private String cardDescription;			//optianal
 	private int cardPriority;				//optianal
-	private ArrayList<User> relatedUser;	//optianal
+	private ArrayList<String> relatedUser = new ArrayList<String>();	//optianal
 	private Date startDate;					//optianal
 	private Date dueDate;					//optianal
 
+	public Card(){
+		
+	}
 	public Card(String title) {
 		setID();
 		setTitle(title);
@@ -55,7 +60,7 @@ public class Card implements Serializable, Comparable<Card> {
 		return this.cardPriority;
 	}
 
-	public boolean assignTo(User user) {
+	public boolean assignTo(String user) {
 		if (relatedUser.contains(user)) {
 			return false;
 		}
@@ -63,19 +68,19 @@ public class Card implements Serializable, Comparable<Card> {
 		return true;
 	}
 
-	public ArrayList<User> getUserList() {
+	public ArrayList<String> getUserList() {
 		return this.relatedUser;
 	}
 
-	public boolean removeUserByID(int id) {
-		for (User user : relatedUser) {
-			if (user.getID() == id) {
-				relatedUser.remove(user);
-				return true;
-			}
-		}
-		return false;
-	}
+//	public boolean removeUserByID(int id) {
+//		for (String user : relatedUser) {
+//			if (user.getId() == id) {
+//				relatedUser.remove(user);
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 
 	public boolean setStartDate(Date date) {
 		this.startDate = date;
@@ -96,9 +101,9 @@ public class Card implements Serializable, Comparable<Card> {
 	}
 
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Card o) {
 		Card card = (Card)o;
-		if (this.Date.before(card.Date)) {
+		if (this.startDate.before(card.startDate)) {
 			return 1;
 		}
 		else {

@@ -1,13 +1,15 @@
-import java.util.Arraylist
+package application;
+
+import java.util.ArrayList;
 import java.io.Serializable;
 
-public class User implements Serializable, Comparable<User> {
+public class User implements Serializable{
 
-	private int userID
-	private String userName
+	private int userID;
+	private String userName;
 	
 	public User(String name) {
-		setID();
+		//setID();
 		setName(name);
 	}
 	public boolean setID(int id) {
@@ -20,7 +22,7 @@ public class User implements Serializable, Comparable<User> {
 	}
 	
 	public boolean setName(String name) {
-		this userName = name;
+		this.userName = name;
 		return true;
 	}
 	

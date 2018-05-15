@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="detailsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="908.0" style="-fx-background-color: #c9c9c9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainPaneController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="28.0" layoutY="27.0" prefHeight="581.0" prefWidth="177.0" style="-fx-background: #b7b7b7; -fx-border-color: #b7b7b7;">
+        <content>
+          <AnchorPane fx:id="todoAnchorPane" minHeight="0.0" minWidth="0.0">
+               <children>
+                  <GridPane layoutY="-1.0" prefHeight="30.0" prefWidth="177.0">
+                     <children>
+                        <Label text="Todo">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnAddTodo" mnemonicParsing="false" onAction="#handleAddTodoBtnAction" text="Add" GridPane.columnIndex="2" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <VBox fx:id="todoPane" layoutY="29.0" prefWidth="177.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <ScrollPane hbarPolicy="NEVER" layoutX="219.0" layoutY="27.0" prefHeight="581.0" prefWidth="177.0" style="-fx-background: #b7b7b7; -fx-border-color: #b7b7b7;">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane layoutY="-1.0" prefHeight="30.0" prefWidth="177.0">
+                     <children>
+                        <Label text="Doing">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnAddDoing" mnemonicParsing="false" onAction="#handleAddDoingBtnAction" text="Add" GridPane.columnIndex="2" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <VBox fx:id="doingPane" layoutY="29.0" prefHeight="376.0" prefWidth="177.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane hbarPolicy="NEVER" layoutX="410.0" layoutY="27.0" prefHeight="581.0" prefWidth="177.0" style="-fx-background: #b7b7b7; -fx-border-color: #b7b7b7;">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane layoutY="-1.0" prefHeight="30.0" prefWidth="177.0">
+                     <children>
+                        <Label text="Done">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnAddDone" mnemonicParsing="false" onAction="#handleAddDoneBtnAction" text="Add" GridPane.columnIndex="2" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <VBox fx:id="donePane" layoutY="29.0" prefHeight="376.0" prefWidth="177.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <VBox layoutX="605.0" layoutY="27.0" prefHeight="581.0" prefWidth="281.0">
+         <children>
+            <VBox prefHeight="193.0" prefWidth="281.0" style="-fx-background-color: #b7b7b7;">
+               <children>
+                  <Label text="Description">
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="descriptionArea" disable="true" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
+            <GridPane style="-fx-background-color: #b7b7b7;">
+               <children>
+                  <Label text="Start date" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Due date" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Estimate" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Assign to" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Priority" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="startDate" disable="true" prefHeight="23.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <DatePicker fx:id="dueDate" disable="true" prefHeight="23.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <TextField fx:id="estimateTime" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="personInCharge" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <MenuButton fx:id="priorityMenu" disable="true" mnemonicParsing="false" text="High" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleHighPriority" text="High" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleMidPriority" text="Mid" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleLowPriority" text="Low" />
+                     </items>
+                  </MenuButton>
+                  <Label text="Title">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="cardTitle" disable="true" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="87.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="194.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="209.0" prefWidth="281.0" style="-fx-background-color: #b7b7b7;">
+               <children>
+                  <Button fx:id="btnCancel" disable="true" mnemonicParsing="false" onAction="#handleCancelBtnAction" text="Cancel">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnRemove" disable="true" mnemonicParsing="false" onAction="#handleRemoveBtnAction" text="Remove">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnSubmit" disable="true" mnemonicParsing="false" onAction="#handleSubmitBtnAction" text="Submit">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>

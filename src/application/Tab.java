@@ -1,21 +1,49 @@
+package application;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.io.Serializable;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import javafx.scene.layout.Pane;
 
 public class Tab implements Serializable {
-	public static Tab kanban;
+	public static Tab kanban = new Tab("Kanban");
 	public static final String FILE_NAME = "KanbanTab";
 
 	private int tabID;
 	private String tabName;
-	private ArrayList<SwimmingLane> innerLanes;
+	private ArrayList<SwimmingLane> innerLanes = new  ArrayList<SwimmingLane>();
+	private ArrayList<Card> cards = new ArrayList<Card>();
+	private Map<Integer, Pane> cardIdPaneMap= new HashMap<Integer, Pane>();
 	private int currentLaneID;
 	private int currentCardID;
 	private int currentUserID;
 
+	public void addIdPaneMap(Integer id, Pane pane) {
+		cardIdPaneMap.put(id, pane);
+	}
+	
+	public Pane getPaneById(Integer id) {
+		return cardIdPaneMap.get(id);
+	}
+	
+	public void addCard(Card card) {
+		cards.add(card);
+	}
+	
+	public Card getCard(int id) {
+		for(Card card: cards) {
+			if(card.getID() == id) {
+				return card;
+			}
+		}
+		return null;
+	}
+	
 	public Tab(String name) {
 		setName(name);
 		currentUserID = 0;
